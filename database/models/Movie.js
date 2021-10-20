@@ -1,6 +1,6 @@
 module.exports = function (sequelize, dataTypes) {
 
-    let alias = "Movies";
+    let alias = "Movie";
 
     let cols = {
         id: {
@@ -10,17 +10,24 @@ module.exports = function (sequelize, dataTypes) {
         },
         title: { type: dataTypes.STRING },
         image: { type: dataTypes.STRING },
-        createDate : { type: dataTypes.DATE},
+        released : { type: dataTypes.DATE},
         rating: { type: dataTypes.INTEGER}
     };
 
     let config = {
-        tableName: "Genres",
+        tableName: "Movies",
         timestamps: false
     };
 
-    let Genre = sequelize.define(alias, cols, config);
+    let Movie = sequelize.define(alias, cols, config);
 
-  
-    return Genre;
+
+    Movie.associate = (models)=>{
+    Movie.belongsTo(models.Genre,{
+        as : 'movieGenre',
+        foreignKey : 'movie_id',
+    })}
+
+
+    return Movie;
 }

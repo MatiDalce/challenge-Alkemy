@@ -20,16 +20,27 @@ module.exports = function (sequelize, dataTypes) {
     };
 
     let config = {
-        tableName: "Genres",
+        tableName: "Character",
         timestamps: false
     };
 
-    let Genre = sequelize.define(alias, cols, config);
+    let Character = sequelize.define(alias, cols, config);
+
+    Character.associate = function(models) { 
+
+          Character.belongsToMany(models.Movie , { 
+             as: "movies",
+             through: "charactersmovie",
+             foreignkey: "character_id",
+             otherkey: "movie_id"
+          })
+    }
 
 
 
 
-    return Genre;
+
+    return Character;
 
 
 
