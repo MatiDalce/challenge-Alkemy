@@ -26,7 +26,7 @@ await db.Movie.create({
     realeased: req.body.realeased,
     rating: req.body.rating})
 
-    console.log(req.body)
+    console.log(req)
 
 
 
