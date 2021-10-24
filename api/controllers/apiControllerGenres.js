@@ -3,13 +3,13 @@ const db = require("../../database/models")
 module.exports = {
 
 
-genresDetail: async (req,res) => { 
+    genresDetail: async (req, res) => {
 
 
-    const genres = await db.Genre.findAll()
+        const genres = await db.Genre.findAll()
 
 
-    res.json(genres)
+        res.json(genres)
+    }
+
 }
-
- }

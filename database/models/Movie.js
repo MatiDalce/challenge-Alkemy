@@ -10,8 +10,8 @@ module.exports = function (sequelize, dataTypes) {
         },
         title: { type: dataTypes.STRING },
         image: { type: dataTypes.STRING },
-        released : { type: dataTypes.DATE},
-        rating: { type: dataTypes.INTEGER}
+        released: { type: dataTypes.DATE },
+        rating: { type: dataTypes.INTEGER }
     };
 
     let config = {
@@ -22,11 +22,12 @@ module.exports = function (sequelize, dataTypes) {
     let Movie = sequelize.define(alias, cols, config);
 
 
-    Movie.associate = (models)=>{
-    Movie.belongsTo(models.Genre,{
-        as : 'movieGenre',
-        foreignKey : 'genre_id',
-    })}
+    Movie.associate = (models) => {
+        Movie.belongsTo(models.Genre, {
+            as: 'movieGenre',
+            foreignKey: 'genre_id',
+        })
+    }
 
 
     return Movie;

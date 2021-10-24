@@ -10,7 +10,7 @@ module.exports = function (sequelize, dataTypes) {
         },
         name: { type: dataTypes.STRING },
         email: { type: dataTypes.STRING },
-        password : { type: dataTypes.DATE}
+        password: { type: dataTypes.DATE }
     };
 
     let config = {
@@ -21,7 +21,7 @@ module.exports = function (sequelize, dataTypes) {
     let User = sequelize.define(alias, cols, config);
 
 
- 
+
 
 
     return User;

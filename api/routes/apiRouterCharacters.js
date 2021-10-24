@@ -5,8 +5,11 @@ const apiController = require("../controllers/apiControllerCharacters")
 
 
 router.get("/", apiController.charactersDetail)
-router.get("/:id", apiController.iddetail)
+
 router.post("/", apiController.createCharacter)
+
+router.get("/:id", apiController.iddetail)
+router.delete("/id", apiController.destroy)
 
 
 module.exports = router

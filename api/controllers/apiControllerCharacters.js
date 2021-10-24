@@ -1,7 +1,7 @@
 const db = require("../../database/models")
 module.exports = 
 
-{charactersDetail: async (req, res) => {
+{charactersDetail: async (req, res) => { 
 
 
     const characters = await db.Character.findAll();
@@ -15,8 +15,10 @@ module.exports =
 
 
 createCharacter : async (req,res) => { 
+ 
 
-db.Character.create({  
+
+new db.Character.create({  
 
 name : req.body.name  ,  
 image : req.body.image , 
@@ -29,16 +31,18 @@ history : req.body.history
 },
 
 iddetail : async (req,res) => { 
-
  const character = await db.Character.findByPk(req.params.id)
 
 
   res.status(202).json(character)
 
+}, 
 
- 
+destroy : async (req, res)=> { 
 
+  await db.Character.destroy({where:{id:req.params.id}})
 
+  res.status(202)
 
 }
 
