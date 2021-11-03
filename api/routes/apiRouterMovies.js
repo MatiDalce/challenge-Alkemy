@@ -4,8 +4,8 @@ const apiController = require("../controllers/apiControllerMovies.js")
 
 
 
-router.get("/", apiController.moviesDetail)
-router.post("/:id", apiController.moviesCreate)
-router.delete("/:id" , apiController.destroy)
+router.get("/",/*authMiddleware,*/ apiController.moviesDetail)
+router.post("/:id", /*authMiddleware,*/apiController.moviesCreate)
+router.delete("/:id" ,/*authMiddleware,*/ apiController.destroy)
 
 module.exports = router

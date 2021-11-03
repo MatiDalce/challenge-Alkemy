@@ -26,15 +26,16 @@ module.exports = function (sequelize, dataTypes) {
 
     let Character = sequelize.define(alias, cols, config);
 
-    Character.associate = function(models) { 
+    /*  Character.associate = function(models) { 
 
-          Character.belongsToMany(models.Movie , { 
+         Character.belongsToMany(models.Movie , { 
              as: "movies",
              through: "charactersmovie",
              foreignkey: "character_id",
-             otherkey: "movie_id"
+             otherkey: "movie_id",
+             timestamps:false
           })
-    }
+    }*/
 
 
 

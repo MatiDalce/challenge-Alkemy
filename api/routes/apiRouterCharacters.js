@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const apiController = require("../controllers/apiControllerCharacters")
+const authMiddleware = require("../middlewares/authmiddleware")
 
 
 
-router.get("/", apiController.charactersDetail)
+router.get("/", /*authMiddleware,*/ apiController.charactersDetail)
 
-router.post("/", apiController.createCharacter)
+router.post("/",/*authMiddleware,*/ apiController.createCharacter)
 
-router.get("/:id", apiController.iddetail)
-router.delete("/id", apiController.destroy)
+router.get("/:id",/*authMiddleware,*/ apiController.iddetail)
+router.delete("/id",/*authMiddleware,*/ apiController.destroy)
 
 
 module.exports = router

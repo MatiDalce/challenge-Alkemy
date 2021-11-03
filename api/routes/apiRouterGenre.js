@@ -4,7 +4,7 @@ const apiController = require("../controllers/apiControllerGenres")
 
 
 
-router.get("/", apiController.genresDetail)
+router.get("/", /*authMiddleware,*/apiController.genresDetail)
 
 
 

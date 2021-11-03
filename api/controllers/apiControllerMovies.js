@@ -4,7 +4,13 @@ module.exports = {
 
 
 
-        const movies = await db.Movie.findAll({ include: [{ association: "movieGenre" }] })
+        const movies = await db.Movie.findAll({ include: /*[*/{ association: "movieGenre" } /*{association: "charac"}]*/ })
+
+        
+
+
+
+
         res.json(movies)
     },
 
